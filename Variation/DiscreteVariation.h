@@ -2,7 +2,7 @@
 #define DISCRETEVARIATION_H
 
 #include "Variation.h"
-#include "../Core/VariableWrapper.h"
+#include <Core/VariableWrapper.h>
 #include <vector>
 
 namespace dgs {

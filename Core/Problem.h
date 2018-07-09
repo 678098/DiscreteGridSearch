@@ -1,7 +1,7 @@
 #ifndef PROBLEM_H
 #define PROBLEM_H
 
-#include "../Variation/Variation.h"
+#include <Variation/Variation.h>
 #include "Function.h"
 #include <vector>
 

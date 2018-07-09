@@ -1,7 +1,7 @@
-#include "../Core/Problem.h"
-#include "../Variation/DiscreteVariation.h"
-#include "../Solver/GlobalOptimizationSolver.h"
-#include "../Core/Function.h"
+#include <Core/Problem.h>
+#include <Variation/DiscreteVariation.h>
+#include <Solver/GlobalOptimizationSolver.h>
+#include <Core/Function.h>
 #include <iostream>
 #include <time.h>
 #include <cstdlib>

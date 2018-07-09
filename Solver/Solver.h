@@ -1,7 +1,7 @@
 #ifndef SOLVER_H
 #define SOLVER_H
 
-#include "../Core/Problem.h"
+#include <Core/Problem.h>
 
 namespace dgs {
 

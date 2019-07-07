@@ -10,8 +10,12 @@ namespace dgs {
 
 template<typename _Tp> class DiscreteVariation: public Variation {
 public:
-	static VariationPtr build(_Tp &data, const std::vector<_Tp> &values) {
-		return VariationPtr(new DiscreteVariation<_Tp>(&data, values));
+	static VariationPtr by_ref(_Tp &data, const std::vector<_Tp> &values) {
+		return VariationPtr(new DiscreteVariation<_Tp>(VariableWrapper<_Tp>::by_ref(data), values));
+	}
+
+	static VariationPtr by_setter(SetterType<_Tp> &setter, const std::vector<_Tp> &values) {
+		return VariationPtr(new DiscreteVariation<_Tp>(VariableWrapper<_Tp>::by_setter(setter), values));
 	}
 
 	void reset() override {
@@ -43,8 +47,8 @@ public:
 	}
 
 private:
-	DiscreteVariation(_Tp *dataPtr, const std::vector<_Tp> &values) :
-			wrap(dataPtr), values(values) {
+	DiscreteVariation(VariableWrapper<_Tp> &&wrap, const std::vector<_Tp> &values) :
+			wrap(wrap), values(values) {
 		reset();
 	}
 

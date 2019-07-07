@@ -70,7 +70,7 @@ int main(int argc, char **argv) {
 	dgs::Problem problem;
 	for (int i = 0; i < backpack->itemsNum; i++) {
 		problem.addVariation(
-				dgs::DiscreteVariation<ITEM_STATE>::build(backpack->states[i], {
+				dgs::DiscreteVariation<ITEM_STATE>::by_ref(backpack->states[i], {
 						IS_NOT_TAKEN, IS_TAKEN }));
 	}
 	problem.setFunction(backpack);

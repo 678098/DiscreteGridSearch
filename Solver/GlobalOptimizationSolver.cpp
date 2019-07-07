@@ -23,11 +23,16 @@ double GlobalOptimizationSolver::solve(Problem &problem) {
     FunctionPtr func = problem.getFunction();
     
     resetAll(vars);
+    problem.saveState("initial");
+
     double bestValue = func->calculate();
     
     while (next(vars)) {
         double value = func->calculate();
-        if (value > bestValue) bestValue = value;
+        if (value > bestValue) {
+        	bestValue = value;
+        	problem.saveState("max");
+        }
     }
     
     return bestValue;

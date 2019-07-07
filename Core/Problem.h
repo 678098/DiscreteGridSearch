@@ -15,6 +15,9 @@ public:
 
     std::vector<VariationPtr> &getVariations();
     FunctionPtr &getFunction();
+
+    void saveState(const std::string &id);
+    void loadState(const std::string &id);
 private:
     std::vector<VariationPtr> vars;
     FunctionPtr function;

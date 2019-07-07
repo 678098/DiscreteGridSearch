@@ -8,6 +8,7 @@ namespace dgs {
 class Solver
 {
 public:
+	virtual ~Solver() = default;
     virtual double solve(Problem &problem) = 0;
 };
 

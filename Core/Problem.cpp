@@ -18,4 +18,16 @@ FunctionPtr &Problem::getFunction() {
     return function;
 }
 
+void Problem::saveState(const std::string &id) {
+	for (VariationPtr &var : vars) {
+		var->saveState(id);
+	}
+}
+
+void Problem::loadState(const std::string &id) {
+	for (VariationPtr &var : vars) {
+		var->loadState(id);
+	}
+}
+
 }

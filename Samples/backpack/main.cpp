@@ -77,7 +77,7 @@ int main(int argc, char **argv) {
 
 	dgs::GlobalOptimizationSolver solver;
 
-	std::cout << solver.solve(problem) << std::endl;
+	std::cout << solver.maximize(problem) << std::endl;
 
 	problem.loadState("max");
 	backpack->printState();

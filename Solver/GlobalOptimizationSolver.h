@@ -2,17 +2,20 @@
 #define GLOBALOPTIMIZATIONSOLVER_H
 
 #include "Solver.h"
+#include <functional>
 
 namespace dgs {
-    
-class GlobalOptimizationSolver : public Solver
-{
+
+class GlobalOptimizationSolver: public Solver {
 public:
-    double solve(Problem &problem) override;
-    
+	double minimize(Problem &problem) override;
+	double maximize(Problem &problem) override;
+
 private:
-    void resetAll(std::vector<VariationPtr> &vars);
-    bool next(std::vector<VariationPtr> &vars);
+	double solve(Problem &problem, std::function<bool(double, double)> isBetter, const std::string &category);
+
+	void resetAll(std::vector<VariationPtr> &vars);
+	bool next(std::vector<VariationPtr> &vars);
 };
 
 }

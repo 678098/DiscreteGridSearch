@@ -9,7 +9,8 @@ class Solver
 {
 public:
 	virtual ~Solver() = default;
-    virtual double solve(Problem &problem) = 0;
+    virtual double minimize(Problem &problem) = 0;
+    virtual double maximize(Problem &problem) = 0;
 };
 
 }
